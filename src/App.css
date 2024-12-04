@@ -1,0 +1,265 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+:root {
+  --primary-color: #755139FF;
+  --secondary-color: #D4B996FF;
+}
+
+body {
+  color: white;
+  line-height: 1.6;
+}
+
+html {
+  font-size: 75.5%;
+}
+
+/* Header Styles */
+.header {
+  width: 100%;
+  height: 500px;
+  color: var(--secondary-color);
+  box-shadow: 0 5px 10px var(--secondary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(./images/img1.jpg);
+  clip-path: circle(60% at left 300px);
+  z-index: -1;
+}
+
+.row1 h1 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  margin-left: -200px;
+  text-align: center;
+  font-family: 'Bodoni Moda', serif;
+}
+
+.row2 {
+  position: absolute;
+  top: 10px;
+  right: 150px;
+  text-align: center;
+}
+
+.row2 h2 {
+  font-size: 3rem;
+  margin: 20px 0;
+}
+
+.row2 img {
+  margin-top: 30px;
+  width: 250px;
+}
+
+/* Search Section */
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  margin: 20px 0;
+}
+
+.search input {
+  outline: none;
+  border: 0;
+  width: 350px;
+  height: 35px;
+  font-size: 15px;
+  padding: 0 0.5rem;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+.search button {
+  outline: none;
+  border: none;
+  height: 35px;
+  margin-left: -20px;
+  color: red;
+  background-color: transparent;
+  padding: 0 0.5rem;
+  cursor: pointer;
+}
+
+/* Card Grid */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px 0;
+ 
+}
+
+.card {
+  background-color: #fff;
+  color: black;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 200px; /* Default width for larger screens */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(0.9);
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.card .bottom {
+  margin-top: 15px;
+}
+
+.card .bottom .title {
+  font-size: 1rem;
+  font-weight: bold;
+}
+.card .amount {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* .card .bottom .amount {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  font-size: 1.3rem;
+  font-weight: bold;
+  padding: 0.2rem;
+} */
+
+/* Overlay */
+.overlay {
+  min-height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background: linear-gradient(green, red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay-inner {
+  background: white;
+  width: 90%;
+  max-width: 700px;
+  height: auto;
+  padding: 1.5rem;
+  position: relative;
+  box-sizing: border-box;
+  font-size: 1.3rem;
+  overflow: hidden;
+}
+
+.overlay-inner .close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 17px;
+  background-color: transparent;
+}
+
+.overlay-inner .inner-box {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.overlay-inner .inner-box img {
+  margin-right: 20px;
+  width: 150px;
+  height: 200px;
+}
+
+.overlay-inner .description {
+  margin-top: 2rem;
+  text-align: justify;
+  font-size: 1.3rem;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .header {
+    height: auto;
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .row1 h1 {
+   margin-left: 10px;
+   font-size: 10px;
+  }
+
+  .row2 {
+    position: static;
+    margin-top: 20px;
+  }
+
+  .row2 h2 {
+    font-size: 2rem;
+  }
+
+  .search {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .search input {
+    width: 90%;
+    font-size: 1rem;
+  }
+
+  
+
+  .card {
+    width: 90%;
+    margin: 10px 0;
+    padding: 15px;
+    flex-direction: column;
+  }
+  .card img {
+    height: auto;
+  }
+  .card .title {
+    font-size: 0.9rem;
+  }
+  .card .amount {
+    font-size: 0.8rem;
+  }
+  .overlay-inner {
+    width: 100%;
+    padding: 20px;
+  }
+}
